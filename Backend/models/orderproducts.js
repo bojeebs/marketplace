@@ -17,6 +17,16 @@ module.exports = (sequelize, DataTypes) => {
 
   OrderProducts.init(
     {
+      productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Product",
+          key: "id",
+        },
+      },
+    },
+    {
       quantity: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 1,

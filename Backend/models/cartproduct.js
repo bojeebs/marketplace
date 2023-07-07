@@ -16,6 +16,26 @@ module.exports = (sequelize, DataTypes) => {
   }
   CartProduct.init(
     {
+      productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Product",
+          key: "id",
+        },
+      },
+    },
+    {
+      shoppingcartId: {
+        type: DataTypes.INTEGER,
+        allownull: false,
+        references: {
+          model: "Product",
+          key: "id",
+        },
+      },
+    },
+    {
       quantity: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 1,

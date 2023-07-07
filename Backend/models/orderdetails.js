@@ -16,7 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   OrderDetails.init(
     {
-      orderdetailId: DataTypes.INTEGER,
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        references: {
+          model: "user",
+          key: "id",
+        },
+      },
+    },
+    {
       price: DataTypes.INTEGER,
     },
     {
