@@ -23,10 +23,12 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-    },
-    {
-      cartId: DataTypes.INTEGER,
-      price: DataTypes.INTEGER,
+      cartId: {
+        type: DataTypes.INTEGER,
+      },
+      price: {
+        type: DataTypes.INTEGER,
+      },
     },
     {
       sequelize,

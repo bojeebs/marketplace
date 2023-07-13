@@ -1,18 +1,17 @@
 const express = require("express");
 const cors = require("cors");
+const AppRouter = require("./Routes/AppRouter");
 // const db = require("./db");
 
 const app = express();
-
-const AppRouter = require("./Routes/AppRouter");
 
 const PORT = process.env.PORT || 3001;
 
 const corsOptions = {
   origin: ["http://localhost:3000"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-  allowedHeaders: ["Content-Type", "Authorization"],
+  // credentials: true,
+  // optionsSuccessStatus: 200,
+  // allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));
@@ -25,3 +24,5 @@ app.use("/api", AppRouter);
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
 });
+
+module.exports = app;

@@ -24,21 +24,19 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-    },
-    {
       shoppingcartId: {
         type: DataTypes.INTEGER,
-        allownull: false,
+        allowNull: false,
         references: {
-          model: "Product",
+          model: "ShoppingCart",
           key: "id",
         },
       },
-    },
-    {
-      quantity: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1,
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
     },
     {
       sequelize,
