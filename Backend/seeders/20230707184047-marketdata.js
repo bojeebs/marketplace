@@ -28,7 +28,6 @@ module.exports = {
     await queryInterface.bulkInsert("orderdetails", [
       {
         id: 1,
-        orderdetailId: 1,
         price: 100,
         createdAt: new Date(),
         updatedAt: new Date(),
