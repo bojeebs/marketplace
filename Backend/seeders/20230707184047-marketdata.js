@@ -45,7 +45,6 @@ module.exports = {
     await queryInterface.bulkInsert("product", [
       {
         id: 1,
-        productID: 1,
         productDescription: "This is a nice product",
         productPrice: 50,
         imageUrl: "www.linkhere.com",
