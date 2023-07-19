@@ -31,6 +31,7 @@ module.exports = {
         price: 100,
         createdAt: new Date(),
         updatedAt: new Date(),
+        userId: 1,
       },
     ]);
     await queryInterface.bulkInsert("orderproducts", [
