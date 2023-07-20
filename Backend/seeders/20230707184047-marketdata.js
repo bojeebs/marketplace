@@ -55,10 +55,10 @@ module.exports = {
     await queryInterface.bulkInsert("shoppingcart", [
       {
         id: 1,
-        shoppingcartId: 1,
         price: 100,
         createdAt: new Date(),
         updatedAt: new Date(),
+        userId: 1,
       },
     ]);
   },
