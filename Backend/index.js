@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3001;
 
 const corsOptions = {
   origin: ["http://localhost:3000"],
-  // credentials: true,
-  // optionsSuccessStatus: 200,
-  // allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200,
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));

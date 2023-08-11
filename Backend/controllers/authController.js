@@ -5,10 +5,12 @@ const Login = async (req, res) => {
   try {
     const user = await User.findOne({
       where: { username: req.body.username}, 
-      raw: true
+      raw: true,
     })
+    console.log("User found:", user);
     if (
       user && (await middleware.comparePassword(user.password, req.body.password))
+      
     ) {
       let payload = {
         id: user.id,
@@ -24,7 +26,7 @@ const Login = async (req, res) => {
       let token = middleware.createToken(payload)
       return res.send({user: payload, token})
     }
-    res.status(401).send({ status: 'Error', msg: 'Unauthorized'})
+    res.status(401).send({ status: 'Error, authcontroller', msg: 'Unauthorized'})
   } catch (error) {
     console.error(error)
     res.status(500).send({ status: 'Error', msg: 'Internal server error'})

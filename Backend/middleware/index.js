@@ -43,14 +43,14 @@ const stripToken = (req, res, next) => {
       return next()
     }
   } catch (error) {
-    res.status(401).send({ status: 'Error', msg: 'Unauthorized'})
+    res.status(401).send({ status: 'Error1', msg: 'Unauthorized'})
   }
 }
 
 const requireAuth = (req, res, next) => {
   const { token } = res.locals
   if (!token) {
-    return res.status(401).send({ status: 'Error', msg: "Unathorized"})
+    return res.status(401).send({ status: 'Error2', msg: "Unathorized"})
   }
 
   try {
@@ -59,7 +59,7 @@ const requireAuth = (req, res, next) => {
     req.userId = payload.userId
     next()
   }catch (error) {
-    res.status(401).send ({ status: 'Error', msg: 'Unauthorized'})
+    res.status(401).send ({ status: 'Error3', msg: 'Unauthorized'})
   }
 }
 
